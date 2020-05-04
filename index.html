@@ -36,13 +36,27 @@
 			</div>
 		</div>
 	</section>
-	<div class="container">
-		<div id="buttons">
-			<button id="play-rock">Kamień</button>
-			<button id="play-paper">Papier</button>
-			<button id="play-scissors">Nożyce</button>
+	<div class="game">
+		<div class="container">
+			<h2 class="game-title">No to gramy! Wybieraj:</h2>
+			<div id="buttons">
+				<div class="row">
+					<div class="pick col-md-4">
+						
+						<i class="far fa-hand-rock" id="play-rock"></i>
+					</div>
+					<div class="pick col-md-4">
+
+						<i class="far fa-hand-paper" id="play-paper"></i>
+					</div>
+					<div class="pick col-md-4">
+						
+						<i class="far fa-hand-scissors" id="play-scissors"></i>
+					</div>
+				</div>
+			</div>
+			<div class="results" id="messages"></div>
 		</div>
-		<div id="messages"></div>
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>

@@ -1,6 +1,6 @@
  $color-one: #030027;
  $color-two: #F2F3D9;
- $color-three: #DC9E82;
+ $color-three: #384E77;
 $color-four: #151E3F;
 
  body {
@@ -43,4 +43,28 @@ $color-four: #151E3F;
  }
  .row {
      padding: 32px 0;
+ }
+ .game {
+    height: 600px;
+    width: 100%;
+    padding: 32px 20px;
+    margin: auto;
+    color: $color-two;
+    background-color: $color-three;
+ }
+ .game i{
+    font-size: 30px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    background-color: $color-one;
+    color: $color-two;
+    cursor: pointer;
+ }
+ .results {
+     font-size: 24px;
+     line-height: 70px;
  }

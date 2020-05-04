@@ -1,4 +1,10 @@
+//Score
+var playerWins = 0;
+var computerWins = 0;
+var draws = 0;
+//Game
 function playGame(playerInput){
+
     //Functions
     function getMoveName(argMoveId){
         if(argMoveId == 1){
@@ -14,25 +20,33 @@ function playGame(playerInput){
       }
 
       function displayResult(argComputerMove, argPlayerMove){
-        printMessage('Mój wybór to ' + argComputerMove + ', a Twój ' + argPlayerMove);
         if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
             printMessage('Ty wygrywasz!');
+            playerWins++;
         } else if( argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
             printMessage('Komputer wygrywa!');
+            computerWins++;
         } else if( argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
             printMessage('Remis!')
+            draws++;
         } else if( argComputerMove =='nożyce' && argPlayerMove == 'papier'){
             printMessage('Komputer wygrywa!');
+            computerWins++;
         } else if( argComputerMove =='nożyce' && argPlayerMove == 'kamień'){
             printMessage('Ty wygrywasz!');
+            playerWins++;
         } else if( argComputerMove =='nożyce' && argPlayerMove == 'nożyce'){
             printMessage('Remis!');
+            draws++;
         } else if( argComputerMove =='papier' && argPlayerMove == 'papier'){
             printMessage('Remis!');
+            draws++;
         } else if( argComputerMove =='papier' && argPlayerMove == 'kamień'){
             printMessage('Komputer wygrywa!');
+            computerWins++;
         } else if( argComputerMove =='papier' && argPlayerMove == 'nożyce'){
             printMessage('Ty wygrywasz!');
+            playerWins++;
         } else {
             printMessage('Coś poszło nie tak');
         }
@@ -51,8 +65,9 @@ function playGame(playerInput){
     printMessage('Twój ruch to: ' + argPlayerMove);
     //Results
     displayResult(argComputerMove, argPlayerMove);
+    printMessage('|Gracz: ' + playerWins + ' | Komputer: ' + computerWins + ' | Remisy: ' + draws + ' |');
 }
-
+//Getting pick from player
 document.getElementById('play-rock').addEventListener('click', function(){
     playGame(1);
   });
