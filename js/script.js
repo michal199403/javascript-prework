@@ -104,8 +104,19 @@ document.getElementById('play-paper').addEventListener('click', function () {
 document.getElementById('play-scissors').addEventListener('click', function () {
     playGame(3);
 });
-
-
+//Testing
+document.getElementById('test-run').addEventListener('click', function () {
+    for (i = 100; i > 0; i--) {
+        let randomNumberTest = Math.floor(Math.random() * 3 + 1);
+        playGame(randomNumberTest);
+    }
+});
+document.getElementById('reset').addEventListener('click', function () {
+    playerWins = 0;
+    computerWins = 0;
+    draws = 0;
+    clearMessages();
+})
 
 /* Trash
 if(randomNumber == 1){

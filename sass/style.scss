@@ -45,7 +45,7 @@ $color-four: #151E3F;
     padding: 32px 0;
  }
  .game {
-    height: 700px;
+    height: 800px;
     width: 100%;
     padding: 32px 20px;
     margin: auto;
@@ -73,4 +73,7 @@ $color-four: #151E3F;
  }
  .game input:checked ~ .cheat-mode-active{
     display: block;    
+ }
+ .testing, input {
+     margin-bottom: 20px;
  }
