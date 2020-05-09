@@ -48,7 +48,7 @@ body {
 }
 
 .game {
-  height: 600px;
+  height: 700px;
   width: 100%;
   padding: 32px 20px;
   margin: auto;
@@ -72,5 +72,13 @@ body {
 .results {
   font-size: 24px;
   line-height: 70px;
+}
+
+.cheat-mode-active {
+  display: none;
+}
+
+.game input:checked ~ .cheat-mode-active {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

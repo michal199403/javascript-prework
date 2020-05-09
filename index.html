@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Kamień, papier, nożyce</title>
 	<meta charset="UTF-8">
@@ -7,6 +8,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
 </head>
+
 <body>
 	<header class="splash">
 		<div class="splash-inner">
@@ -15,7 +17,7 @@
 			<p class="page-description">Przed państwem najbardziej emocjonująca gra jaką kiedykolwiek wymyślono!</p>
 		</div>
 	</header>
-	
+
 	<section class="rules">
 		<div class="container">
 			<h2 class="game-name">Kamień, papier, nożyce!</h2>
@@ -42,7 +44,7 @@
 			<div id="buttons">
 				<div class="row">
 					<div class="pick col-md-4">
-						
+
 						<i class="far fa-hand-rock" id="play-rock"></i>
 					</div>
 					<div class="pick col-md-4">
@@ -50,15 +52,19 @@
 						<i class="far fa-hand-paper" id="play-paper"></i>
 					</div>
 					<div class="pick col-md-4">
-						
+
 						<i class="far fa-hand-scissors" id="play-scissors"></i>
 					</div>
 				</div>
 			</div>
 			<div class="results" id="messages"></div>
+			<h2 class="ez-mode">Za trudno? Zaznacz:</h2>
+			<input type="checkbox" id="initEzMode">
+			<h2 class="cheat-mode-active">Teraz będziesz częściej wygrywał!</h2>
 		</div>
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
 </body>
-</html> 
+
+</html>
