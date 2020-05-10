@@ -2,9 +2,25 @@
 var playerWins = 0;
 var computerWins = 0;
 var draws = 0;
+let ez = document.getElementById('initEzMode').checked;
 //Game
-function playGame(playerInput) {
+function playGame(playerInput, ez) {
 
+    //Computer move
+    let randomNumberB;
+    const ezIn = ez;
+    function computerMove(ez) {
+        if (ez == true) {
+            let randomNumber = Math.floor(Math.random() * 4 + 1);
+            randomNumberB = randomNumber;
+        } else if (ez == false) {
+            let randomNumber = Math.floor(Math.random() * 3 + 1);
+            randomNumberB = randomNumber;
+        }
+        //randomNumberB = randomNumber;
+    }
+    console.log('EzIn: ', ezIn);
+    computerMove(ezIn);
     //Functions
     function getMoveName(argMoveId) {
         if (argMoveId == 1) {
@@ -67,19 +83,8 @@ function playGame(playerInput) {
     }
     //Clearing messages
     clearMessages();
-    //Computer move
-    var randomNumberB;
-    function computerMove() {
-        var ez = document.getElementById('initEzMode').checked;
-        if (ez == true) {
-            let randomNumber = Math.floor(Math.random() * 4 + 1);
-            randomNumberB = randomNumber;
-        } else if (ez == false) {
-            let randomNumber = Math.floor(Math.random() * 3 + 1);
-            randomNumberB = randomNumber;
-        }
-    }
-    computerMove();
+
+
     console.error('Wylosowana liczba to: ' + randomNumberB);
     let argComputerMove = getMoveName(randomNumberB);
     printMessage('Mój ruch to: ' + argComputerMove);
@@ -94,21 +99,21 @@ function playGame(playerInput) {
 }
 //Getting pick from player
 document.getElementById('play-rock').addEventListener('click', function () {
-    playGame(1);
+    playGame(1, ez);
 });
 
 document.getElementById('play-paper').addEventListener('click', function () {
-    playGame(2);
+    playGame(2, ez);
 });
 
 document.getElementById('play-scissors').addEventListener('click', function () {
-    playGame(3);
+    playGame(3, ez);
 });
 //Testing
 document.getElementById('test-run').addEventListener('click', function () {
     for (i = 100; i > 0; i--) {
         let randomNumberTest = Math.floor(Math.random() * 3 + 1);
-        playGame(randomNumberTest);
+        playGame(randomNumberTest, ez);
     }
 });
 document.getElementById('reset').addEventListener('click', function () {
