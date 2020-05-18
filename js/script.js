@@ -7,27 +7,27 @@
     function playGame(playerInput) {
 
         //Computer move
+        const randomNumber = checkEasyMode();
+
+        //Checking if easyMode is active
         function checkEasyMode() {
             const chekBox = document.getElementById('initEzMode');
             if (chekBox.checked == true) {
-                computerMoveEasy();
+                return computerMoveEasy();
             } else {
-                computerMoveNormal();
+                return computerMoveNormal();
             }
         }
 
-        let randomNumber;
+        //Geting computer random pick
         function computerMoveEasy() {
-            const randomNumberEasy = Math.floor(Math.random() * 4 + 1);
-            randomNumber = randomNumberEasy;
+            return Math.floor(Math.random() * 4 + 1);
         }
         function computerMoveNormal() {
-            const randomNumberNormal = Math.floor(Math.random() * 3 + 1);
-            randomNumber = randomNumberNormal;
+            return Math.floor(Math.random() * 3 + 1);
         }
-        checkEasyMode();
 
-        //Get move
+        //Get move name
         function getMoveName(argMoveId) {
             if (argMoveId == 1) {
                 return 'kamień';
@@ -79,40 +79,43 @@
                 printMessage('Coś poszło nie tak');
             }
         }
+
         //Clearing messages
         clearMessages();
 
+        //Getting computer move name
+        const argComputerMove = getMoveName(randomNumber);
 
-        console.info('Wylosowana liczba to: ' + randomNumber);
-        let argComputerMove = getMoveName(randomNumber);
-        //printMessage('Mój ruch to: ' + argComputerMove);
-        //Player move
-        //console.log('Gracz wpisał: ' + playerInput);
-        let argPlayerMove = getMoveName(playerInput);
-        //printMessage('Twój ruch to: ' + argPlayerMove);
-        //Results
+        //Getting player move name
+        const argPlayerMove = getMoveName(playerInput);
+
+        //Displaying results of round
         displayResult(argComputerMove, argPlayerMove);
+
+        //Displaying score board of played games
         printMessage('|Gracz: ' + playerWins + ' | Komputer: ' + computerWins + ' | Remisy: ' + draws + ' |');
     }
+
     //Getting pick from player
     document.getElementById('play-rock').addEventListener('click', function () {
         playGame(1);
     });
-
     document.getElementById('play-paper').addEventListener('click', function () {
         playGame(2);
     });
-
     document.getElementById('play-scissors').addEventListener('click', function () {
         playGame(3);
     });
-    //Testing
-    document.getElementById('test-run').addEventListener('click', function () {
+
+    //Quick 100 games for random player pick 
+    document.getElementById('quick-run').addEventListener('click', function () {
         for (i = 100; i > 0; i--) {
-            let randomNumberTest = Math.floor(Math.random() * 3 + 1);
-            playGame(randomNumberTest);
+            const randomNumberQuick = Math.floor(Math.random() * 3 + 1);
+            playGame(randomNumberQuick);
         }
     });
+
+    //Clearing score board
     document.getElementById('reset').addEventListener('click', function () {
         playerWins = 0;
         computerWins = 0;
